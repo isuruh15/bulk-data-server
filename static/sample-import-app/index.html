@@ -94,9 +94,27 @@
             #fhir-selector .dropdown-menu {
                 min-width: 100%;
             }
+            .success-icon,
+            .warning-danger-icon
+            {
+                display: none;
+                padding: 0.3em 0.5em 0.3em 0
+            }
+            .panel-success .success-icon,
+            .panel-warning .warning-danger-icon,
+            .panel-danger  .warning-danger-icon {
+                display: inherit;
+            }
             .table > tbody > tr.error-detail > td {
                 padding-top: 0;
                 border-top : 0;
+            }
+            tr.error-detail > td > em {
+                border: solid 1px #e1c9ab;
+                border-radius: 2px;
+                display: inline-block;
+                margin-top: -8px;
+                padding: 4px 12px;
             }
             /* omit characters from middle of long lines that do not wrap, e.g. URLs */
             .truncated::before, .truncated::after {
@@ -148,9 +166,6 @@
             .files-table > tbody > tr > td .btn {
                 background: transparent;
             }
-            /* .nav .nav-tabs {
-                margin-top: ;
-            } */
             .btn:disabled {
                 filter: grayscale(1);
                 opacity: 0.5;
@@ -692,8 +707,9 @@
                     <div id="success-result">
                         <div class="panel">
                             <div id="result-description" class="panel-heading">
+                                <i class="success-icon fa fa-upload pull-left"></i>
+                                <i class="warning-danger-icon fa fa-exclamation-triangle pull-left"></i>
                                 <b>Bulk import operation completed</b>
-                                <i class="fa fa-upload pull-right"></i>
                             </div>
                             <table class="table file-list">
                                 <thead>

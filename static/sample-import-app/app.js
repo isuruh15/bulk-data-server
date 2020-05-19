@@ -173,7 +173,7 @@ jQuery(function($) {
             $(".file-list tbody").append(`
                 <tr class="text-danger error-detail">
                     <td></td>
-                    <td colspan="5" class="text-danger small"><em>${errorMsg}</em></td>
+                    <td colspan="5" class="text-danger small"><em class="bg-warning">${errorMsg}</em></td>
                 </tr>`
             );
         });
@@ -186,7 +186,7 @@ jQuery(function($) {
         $("#result-description b").text(
             outcome.error.length ?
                 outcome.output.length ?
-                    "Problems encountered importing some files" :
+                    "Some files could not be imported" :
                     "No files were imported" :
                 "All files successfully imported"
             );
